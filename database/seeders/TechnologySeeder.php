@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Type;
+use App\Models\Technology;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
-class TypeSeeder extends Seeder
+class TechnologySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,13 +16,11 @@ class TypeSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $types =["Sport","Business","Videogames","Motors","Lifestyle","Cooking"];
-
-        foreach($types as $type) { 
-            $newType = new Type();
-            $newType->name = $type;
+        for ($i=0; $i < 10; $i++) { 
+            $technology = new Technology();
+            $technology->name = $faker->word();
            
-            $newType->save();
+            $technology->save();
         }
     }
 }

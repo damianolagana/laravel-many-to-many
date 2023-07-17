@@ -58,6 +58,27 @@
             </div>
 
             <div class="mb-3">
+                
+                <label for="technology" class="form-label">Technology</label>
+                <div class="mb-3 d-flex justify-content-around">
+                    @foreach ($technologies as $i=> $technology)
+                    <div class="form-check">
+                        <input type="checkbox" value="{{$technology->id}}" name="technologies[]" id="technologies{{$i}}" class="form-check-input" @error('technology') is-invalid @enderror>
+                        <label for="technology{{$i}}" class="form-label">{{$technology->name}}</label>
+                        
+                    </div>
+                    @endforeach
+
+                </div>
+                
+
+                @error('technology')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+
+            </div>
+
+            <div class="mb-3">
 
                 <label for="inputImage" class="form-label">Image URL</label>
                 <input name="image" type="text" class="form-control @error('image') is-invalid @enderror"

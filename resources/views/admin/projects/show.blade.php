@@ -7,9 +7,9 @@
     <div class="row g-4">
         <div>
             {{-- <h4 class="text-center"><a href="{{route("comics.show",$comic->id)}}">{{$comic->title}}</a></h4> --}}
-            <h4 class="text-center">{{$project->title}}</h4>
+            <h2 class="text-center">{{$project->title}}</h2>
+            <h3 class="pt-3 text-center">Tipo: {{$project->type ? $project->type->name : "Type not found"}}</h3>
             <p class="pt-3 text-center">{{$project->content}}</p>
-            <p class="pt-3 text-center">Categoria: {{$project->type ? $project->type->name : "Type not found"}}</p>
             <div class="py-3 text-center imgBox">
                 <img class="w-50" src="{{$project->image}}" alt="">
             </div>

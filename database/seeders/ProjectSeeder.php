@@ -19,11 +19,13 @@ class ProjectSeeder extends Seeder
     {
         $types = Type::all();
 
+        
+
         for ($i=0; $i < 10; $i++) { 
             $project = new Project();
             $project->title = $faker->words(3,true);
             $project->content = $faker->text(300);
-            $project->image = $faker->imageUrl(640, 480, $project->title, true);
+            $project->image = "uploads/image-placeholder.png";
             $project->type_id = rand(1,count($types));
             
             $project->save();

@@ -21,7 +21,7 @@
             </div>
             <p class="py-4 text-center">{{$project->content}}</p>
             <div class="py-3 text-center imgBox">
-                <img class="w-50" src="/storage/{{$project->image}}" alt="">
+                <img class="w-50" src="{{asset('storage/' .$project->image)}}" alt="">
             </div>
         </div>
         

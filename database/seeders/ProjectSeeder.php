@@ -23,7 +23,7 @@ class ProjectSeeder extends Seeder
             $project = new Project();
             $project->title = $faker->words(3,true);
             $project->content = $faker->text(300);
-            $project->image = $faker->imageUrl(640, 480, 'animals', true);
+            $project->image = $faker->imageUrl(640, 480, $project->title, true);
             $project->type_id = rand(1,count($types));
             
             $project->save();

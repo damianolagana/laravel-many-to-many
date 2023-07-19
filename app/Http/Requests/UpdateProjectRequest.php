@@ -26,7 +26,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title' => 'required|min:3|max:30',
             'content' => 'min:10|max:1000',
-            'image' => 'nullable|max:200',
+            'image' => 'nullable|image|max:1024',
             "type_id" => "exists:types,id"
         ];
     }
